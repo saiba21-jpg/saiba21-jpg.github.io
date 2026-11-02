@@ -1,0 +1,15 @@
+body{
+background-color:#BBAABB;
+margin: 0;
+}
+
+/*centers phone*/
+.app{   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+/*Every shape in Figma becomes a div in React/CSS*/
+

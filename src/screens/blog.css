@@ -1,0 +1,73 @@
+.app{   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+/*Every shape in Figma becomes a div in React/CSS*/
+
+/*fake phone screen */
+.screen{ 
+  position: relative;
+  width: 360px;
+  height: 640px;
+
+  background-color: #E0E0E5;
+  border-radius: 40px;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.blogsquare{
+  position: absolute;
+  border-radius: 15px;
+  width: 270px;
+  height: 410px;
+  background-color: grey;
+  opacity: 50%;
+  top: 150px;
+  left: 45px;
+
+  z-index: 1;
+}
+.blogImg{
+  position: absolute;
+  background-color: #E0E0E5;
+  border-radius: 5%;
+  width: 200px;
+  height: 100px;
+  top:170px;
+
+  z-index: 2;
+}
+
+.Paragraph{
+  position: absolute;
+  font-size: 13px;
+  width: 200px;
+  left: 85px;
+  top: 330px;
+
+}
+.Heading{
+  position: absolute;
+  font-size: 20px;
+  top:285px;
+
+}
+
+.shape{
+  position: absolute;
+  width: 110%;
+  top: -75px;
+  transform: rotate(25deg);
+  right: -25px;
+  z-index: 0;
+}
+
