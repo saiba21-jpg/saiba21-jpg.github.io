@@ -13,7 +13,7 @@ function App()
  
 
   useEffect(()=>{ 
-    if (screen!="home") return;
+    if (screen!="home" || screen!="contact") return;
     const timer=setTimeout(()=>{setScreen("load");},2000);
   return()=>clearTimeout(timer);  
 },[screen]);
