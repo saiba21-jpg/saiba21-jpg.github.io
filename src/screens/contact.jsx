@@ -1,9 +1,14 @@
 import "./contact.css"
+import "./contact_reply"
 import shape from "../Images/rect4.png"
 import {useId, useState} from 'react';
+import { useNavigate } from "react-router-dom";
 
 function Contact()
 {
+    const navigate=useNavigate();
+    
+
     function handleSubmit(e)
     {
         //stop browser reloading page 

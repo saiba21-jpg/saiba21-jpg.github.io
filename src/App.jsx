@@ -5,44 +5,42 @@ import Load from "./screens/load.jsx";
 import Reply from "./screens/contact_reply.jsx";
 import Contact from "./screens/contact.jsx";
 import Blog from "./screens/blog.jsx";
+import { BrowserRouter, Routes,Route,useNavigate} from "react-router-dom";
+
+
+function Navigation()
+{
+  const navigate=useNavigate();
+  
+  return (
+    <div>
+      {/*Nav buttons */}
+      <button onClick={()=> navigate("/")}>Home</button>
+       <button onClick={()=> navigate("/load")}>Load</button>
+       <button onClick={()=> navigate("/contact_reply")}>Reply</button>
+       <button onClick={()=> navigate("/contact")}>Contact</button>
+       <button onClick={()=> navigate("/blog")}>Blog</button>
+
+       {/*switch pages*/}
+       <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/load" element={<Load />}/> 
+        <Route path="/contact_reply" element={<Reply />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="/blog" element={<Blog />}/>
+        
+       </Routes>
+    </div>
+  );
+}
 
 function App()
 {
-  const[screen,setScreen]=useState("home");
-  //use useeffect 
- 
-
-  useEffect(()=>{ 
-    if (screen!="home" || screen!="contact") return;
-    const timer=setTimeout(()=>{setScreen("load");},2000);
-  return()=>clearTimeout(timer);  
-},[screen]);
-
-  //load to blog
-  useEffect(()=> {if(screen=="load") return;
-    const timer=setTimeout(() => { setScreen("blog")
-    }, 3000);
-    return () => clearTimeout(timer);
-  },[screen]);
-
-  return (
-    <div>
-      {/*nav buttons*/}
-      <button onClick={()=>setScreen("home")}>Home</button>
-      <button onClick={()=> setScreen("load")}>Load</button>
-      <button onClick={()=> setScreen("contact_reply")}>Reply</button>
-      <button onClick={()=> setScreen("contact")}>Contact</button>
-      <button onClick={()=>setScreen("blog")}>Blog</button>
-
-      {/*switch screens*/}
-      {screen === "home" && <Home />}
-      {screen === "load" && <Load />}
-      {screen === "contact_reply" && <Reply />}
-      {screen === "contact" && <Contact />}
-      {screen === "blog" && <Blog />}
-
-    </div>
-
+  return 
+  (
+    <BrowserRouter>
+    <Navigation/>
+    </BrowserRouter>
   );
 }
 export default App;
